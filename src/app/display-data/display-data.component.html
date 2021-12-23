@@ -1,0 +1,19 @@
+<html lang="en">
+<body>
+  <!-- <img src="../pickawood-gf8e6XvG_3E-unsplash.jpg" class="img"> -->
+  <div class="center">
+    <h1>Upload File</h1>
+    <form class="col s12 white">
+      
+      <div class="">
+        <input type="file"  (change)="fileUpload($event)">
+        <span></span>
+      </div>
+      <div *ngIf="errorMessage" style="color: red;">
+        Please Upload Excel file
+    </div>
+      <input type="submit" value="UploadExcel" (click)="OnSubmit()" multiple><br>
+    </form>
+  </div>
+</body>
+</html>
