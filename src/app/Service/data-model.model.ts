@@ -1,3 +1,5 @@
-export class DataModel {
-    
+export class Data{
+    name: string;
+    phoneNumber: string;
 }
+

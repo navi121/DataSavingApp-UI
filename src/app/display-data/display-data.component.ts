@@ -9,12 +9,24 @@ import { UploaddataServiceService } from '../Service/uploaddata-service.service'
 })
 export class DisplayDataComponent implements OnInit {
   //public excelFile: File;
+  public display: boolean = false;
   public files: string[]=[];
   public errorMessage: boolean=false;
 
-  constructor(private uploadDataService: UploaddataServiceService) { }
+  constructor(public uploadDataService: UploaddataServiceService) { }
+
+  onChange(event: any) {
+    this.uploadDataService.getData();
+    if (event.target.value == "DISPLAY") {
+      this.display = true;
+    }
+    else {
+      this.display = false;
+    }
+  }
 
   ngOnInit(): void {
+    this.uploadDataService.getData();
   }
   
   public fileUpload(event: any) {

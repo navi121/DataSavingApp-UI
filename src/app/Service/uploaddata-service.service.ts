@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Data, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UploaddataServiceService {
+  public list: Data[];
 
   readonly rootUrl = 'http://localhost:36739';
 
@@ -18,6 +19,10 @@ export class UploaddataServiceService {
       formData.append("file", file);
       console.log(formData.get);
       return this.http.post(this.rootUrl + '/AddFile', formData);
+    }
+
+    public getData(){
+      this.http.get(this.rootUrl + '/GetData').toPromise().then(res => this.list = res as Data[]);
     }
     
 }

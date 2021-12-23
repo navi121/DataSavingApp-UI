@@ -14,6 +14,22 @@
     </div>
       <input type="submit" value="UploadExcel" (click)="OnSubmit()" multiple><br>
     </form>
+    
+  </div>
+  <button class="edit" (click)="onChange($event)" value="DISPLAY">View Data</button>
+  <div class="container" *ngIf="display">
+    <table class="table table-bordered table-striped">
+      <tr>
+        <th>Name</th>
+        <th>PhoneNumber</th>
+      </tr>
+      <tbody>
+        <tr class="data" *ngFor="let getData of uploadDataService.list; let i=index">
+          <td>{{getData.name}}</td>
+          <td>{{getData.phoneNumber}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </body>
 </html>
