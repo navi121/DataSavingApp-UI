@@ -16,8 +16,10 @@
     </form>
     
   </div>
-  <button class="edit" (click)="onChange($event)" value="DISPLAY">View Data</button>
-  <div class="container" *ngIf="display">
+  <button class="edit" (click)="onChange($event)" value="DISPLAY">View Data</button><br>
+  <button class="print" printTitle="Naveen Data" printSectionId="print-section"  ngxPrint>print</button>
+  <div class="container" id="print-section" *ngIf="display">
+    <h4 style="color: green;">Excel Data</h4>
     <table class="table table-bordered table-striped">
       <tr>
         <th>Name</th>

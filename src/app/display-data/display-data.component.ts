@@ -9,6 +9,7 @@ import { UploaddataServiceService } from '../Service/uploaddata-service.service'
 })
 export class DisplayDataComponent implements OnInit {
   //public excelFile: File;
+  name = "Angular PDF";
   public display: boolean = false;
   public files: string[]=[];
   public errorMessage: boolean=false;
@@ -29,6 +30,10 @@ export class DisplayDataComponent implements OnInit {
     this.uploadDataService.getData();
   }
   
+  // public print(){
+  //   window.print();
+  // }
+
   public fileUpload(event: any) {
     this.files=event.target.files[0];
   }
