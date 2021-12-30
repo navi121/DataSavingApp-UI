@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Data, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +11,9 @@ export class UploaddataServiceService {
 
   readonly rootUrl = 'http://localhost:36739';
 
-  constructor(private http: HttpClient,
-    private router: Router) { }
+  constructor(private http: HttpClient) { }
 
-    public uploadExcel(file: any) {
+    public uploadExcel(file: any): Observable<any> {
       const formData = new FormData();
 
       formData.append("file", file);

@@ -8,18 +8,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DisplayDataComponent } from './display-data/display-data.component';
 import { UploaddataServiceService } from './Service/uploaddata-service.service';
+import { ViewDataComponent } from './view-data/view-data.component';
+import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { InfiniteScrollDirective, InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DisplayDataComponent
+    DisplayDataComponent,
+    ViewDataComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     RouterModule,
-    NgxPrintModule
+    NgxPrintModule,
+    NgbModule,
+    InfiniteScrollModule
   ],
   exports: [
     RouterModule

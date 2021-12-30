@@ -1,37 +1,19 @@
-<html lang="en">
-<body>
-  <!-- <img src="../pickawood-gf8e6XvG_3E-unsplash.jpg" class="img"> -->
-  <div class="center">
-    <h1>Upload File</h1>
-    <form class="col s12 white">
-      
-      <div class="">
-        <input type="file"  (change)="fileUpload($event)">
-        <span></span>
-      </div>
-      <div *ngIf="errorMessage" style="color: red;">
-        Please Upload Excel file
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="script.js"></script>
+<div class="center" style="margin-top:-1%;">
+
+  <form class="col s12 white">
+    <h1>Upload File <i class="fa fa-upload" aria-hidden="true"></i></h1>
+
+    <div class="" style="margin-top:10%;">
+      <input type="file" style="margin-left:20%;" (change)="fileUpload($event)">
+      <span></span>
     </div>
-      <input type="submit" value="UploadExcel" (click)="OnSubmit()" multiple><br>
-    </form>
-    
-  </div>
-  <button class="edit" (click)="onChange($event)" value="DISPLAY">View Data</button><br>
-  <button class="print" printTitle="Naveen Data" printSectionId="print-section"  ngxPrint>print</button>
-  <div class="container" id="print-section" *ngIf="display">
-    <h4 style="color: green;">Excel Data</h4>
-    <table class="table table-bordered table-striped">
-      <tr>
-        <th>Name</th>
-        <th>PhoneNumber</th>
-      </tr>
-      <tbody>
-        <tr class="data" *ngFor="let getData of uploadDataService.list; let i=index">
-          <td>{{getData.name}}</td>
-          <td>{{getData.phoneNumber}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</body>
-</html>
+    <div *ngIf="errorMessage" style="color: red;margin-top:5%;margin-left:21%;font-size: 15px;">
+      Please Upload Excel file
+    </div><br>
+    <input type="button" value="UploadExcel" style="margin-top:5%;" (click)="OnSubmit()"><br><br>
+  </form>
+
+</div>
+<button class="edit" type="button" style="margin-top:35%;margin-left:45%;" routerLink="/view">View Data</button><br>

@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<h1 style="color: green;margin-left: 40%;font-style: timesnewroman;">Excel Data</h1>
+<div class="container" id="print-section" style="height: 400px; overflow-y: scroll;">
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th >Name</th>
+                <th >PhoneNumber</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let getData of uploadDataService.list; let i=index" >
+                <td>{{getData.name}}</td>
+                <td>{{getData.phoneNumber}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<button type="button" class="btn btn-danger" routerLink='/disdata' style="margin-top:2%;margin-left:10%;">Back</button>
+<button type="button" class="btn btn-dark" printTitle="Naveen Data" printSectionId="print-section"
+style="margin-top:2%;margin-left:70%;" ngxPrint>Print</button>
+
