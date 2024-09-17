@@ -1,0 +1,25 @@
+
+.print {
+    background-color: #4CAF50;
+    border-radius: 20px;
+    border:1px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .print:hover {
+  background-color: rgb(12, 40, 60);
+  color: white;
+  }
+  
+ 
+ thead,
+ tbody tr {
+    display: table;
+    width: 100% ;
+    table-layout: fixed;
+ }

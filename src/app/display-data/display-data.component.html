@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="script.js"></script>
+<div class="center" style="margin-top:-1%;">
+
+  <form class="col s12 white">
+    <h1>Upload File <i class="fa fa-upload" aria-hidden="true"></i></h1>
+
+    <div class="" style="margin-top:10%;">
+      <input type="file" style="margin-left:20%;" (change)="fileUpload($event)">
+      <span></span>
+    </div>
+    <div *ngIf="errorMessage" style="color: red;margin-top:5%;margin-left:21%;font-size: 15px;">
+      Please Upload Excel file
+    </div><br>
+    <input type="button" value="UploadExcel" style="margin-top:5%;" (click)="OnSubmit()"><br><br>
+  </form>
+
+</div>
+<button class="edit" type="button" style="margin-top:35%;margin-left:45%;" routerLink="/view">View Data</button><br>
